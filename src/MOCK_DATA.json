@@ -1,0 +1,58 @@
+[
+  {
+    "id": "11",
+    "photo": "product1.png",
+    "product_code": "5894684854",
+    "name": "Power bank (UMB) XO PR156, 30000 mAh, 3USB + Type-C + Lighting, Quick Charge, Power Delivery, 22.5W, Black",
+    "stock": "NY",
+    "qty": 56,
+    "price_eur": "15.45",
+    "price_usd": "48",
+    "category": "phones",
+    "liked": false,
+    "deleted": false,
+    "added_to_cart": false
+  },
+  {
+    "id": "22",
+    "photo": "product1.png",
+    "product_code": "5894684854",
+    "name": "Power bank (UMB) XO PR156, 30000 mAh, 3USB + Type-C + Lighting, Quick Charge, Power Delivery, 22.5W, Black",
+    "stock": "NY",
+    "qty": 56,
+    "price_eur": "15.45",
+    "price_usd": "48",
+    "category": "accessories",
+    "liked": false,
+    "deleted": false,
+    "added_to_cart": false
+  },
+  {
+    "id": "33",
+    "photo": "product1.png",
+    "product_code": "5894684854",
+    "name": "Power bank (UMB) XO PR156, 30000 mAh, 3USB + Type-C + Lighting, Quick Charge, Power Delivery, 22.5W, Black",
+    "stock": "NY",
+    "qty": 56,
+    "price_eur": "15.45",
+    "price_usd": "48",
+    "category": "accessories",
+    "liked": false,
+    "deleted": false,
+    "added_to_cart": false
+  },
+  {
+    "id": "44",
+    "photo": "product1.png",
+    "product_code": "5894684854",
+    "name": "Power bank (UMB) XO PR156, 30000 mAh, 3USB + Type-C + Lighting, Quick Charge, Power Delivery, 22.5W, Black",
+    "stock": "NY",
+    "qty": 56,
+    "price_eur": "15.45",
+    "price_usd": "48",
+    "category": "phones",
+    "liked": false,
+    "deleted": false,
+    "added_to_cart": false
+  }
+]
