@@ -1,12 +1,11 @@
 import * as React from 'react'
-// import TableContainer from '@mui/material/TableContainer';
 import {
-    createColumnHelper,
     flexRender,
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table'
 
+import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -17,7 +16,6 @@ import TableRow from '@mui/material/TableRow';
 
 function TableMain({columns, dataItems}) {
     const [data, setData] = React.useState(() => [...dataItems])
-    const rerender = React.useReducer(() => ({}), {})[1]
 
     const table = useReactTable({
         data,
@@ -28,8 +26,7 @@ function TableMain({columns, dataItems}) {
     return (
         <TableContainer>
             <Table stickyHeader={true} style={{borderCollapse: "separate",
-            }}
-                   sx={{minWidth: 550}} >
+            }} sx={{minWidth: 550}} >
                 <TableHead style={{alignItems: "center"}}>
                     {table.getHeaderGroups().map(headerGroup => (
                         <TableRow key={headerGroup.id}>
@@ -48,10 +45,10 @@ function TableMain({columns, dataItems}) {
                 </TableHead>
                 <TableBody>
                     {table.getRowModel().rows.map(row => (
-                        <TableRow key={row.id} styles={{border: 0}}>
+                        <TableRow key={row.id} >
                             {row.getVisibleCells().map(cell => (
-                                <TableCell key={cell.id}>
-                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                <TableCell key={cell.id}  align={cell.id === "name" ? 'right' : 'left'} isItemSelected={false} >
+                                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                 </TableCell>
                             ))}
                         </TableRow>
@@ -59,7 +56,6 @@ function TableMain({columns, dataItems}) {
                 </TableBody>
 
             </Table>
-            <div className="h-4"/>
 
         </TableContainer>
     )

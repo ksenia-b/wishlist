@@ -1,25 +1,25 @@
-import Box from "@mui/material/Box";
-import SvgIcon from "@mui/material/SvgIcon";
-import { emphasize, styled } from '@mui/material/styles';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Chip from '@mui/material/Chip';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
 import * as React from "react";
 
+import Box from "@mui/material/Box";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
+import SvgIcon from "@mui/material/SvgIcon";
+import { styled } from '@mui/material/styles';
+
+
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor = "#fff";
     return {
         height: theme.spacing(3),
-        color: theme.palette.text.primary, // 999999
+        color: theme.palette.text.hint,
+        backgroundColor: theme.palette.background.primary,
         fontWeight: theme.typography.fontWeightRegular,
         cursor: 'pointer',
         '&:hover, &:focus': {
-            backgroundColor: emphasize(backgroundColor, 0.06),
+            color: theme.palette.text.hint
         },
         '&:active': {
-            // boxShadow: theme.shadows[1],
-            backgroundColor: emphasize(backgroundColor, 0.12),
+            color: theme.palette.text.secondary
         },
     };
 })
