@@ -8,7 +8,6 @@ import SvgIcon from "@mui/material/SvgIcon";
 import {styled} from '@mui/material/styles';
 import {useTheme} from "@mui/material";
 
-
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
     return {
         height: theme.spacing(3),

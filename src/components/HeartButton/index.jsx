@@ -3,7 +3,6 @@ import {useState} from "react";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-
 const HeartButton = () => {
     const [active, setActive] = useState(false);
 

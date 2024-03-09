@@ -4,7 +4,6 @@ import {
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table'
-
 import {useTheme} from "@mui/material";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,6 +11,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import {styled} from "@mui/material/styles";
+import Chip from "@mui/material/Chip";
 
 
 function TableMain({columns, dataItems}) {
@@ -21,16 +22,15 @@ function TableMain({columns, dataItems}) {
         columns,
         getCoreRowModel: getCoreRowModel(),
     })
-    // [theme.breakpoints.down('sm')]: { flexDirection: 'column',  width: '100%' }
     return (
         <TableContainer>
             <Table stickyHeader={true} style={{
                 borderCollapse: "separate",
             }} sx={{minWidth: 550}}>
                 <TableHead style={{alignItems: "center"}}>
-                    {table.getHeaderGroups().map(headerGroup => (
+                    {table.getHeaderGroups().map(headerGroup=>(
                         <TableRow key={headerGroup.id}>
-                            {headerGroup.headers.map(header => (
+                            {headerGroup.headers.map(header=>(
                                 <TableCell key={header.id} sx={{
                                     backgroundColor: theme.palette.background.primary,
                                     borderBottom: "none",

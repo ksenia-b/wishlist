@@ -1,9 +1,6 @@
 import {createTheme} from "@mui/material";
 
 export const theme = createTheme({
-    typography: {
-        fontFamily: ["Roboto", "Helvetica", "Arial", "sans-serif"].join(',')
-    },
     palette: {
         primary: {
             main: '#405EFF',
@@ -28,10 +25,18 @@ export const theme = createTheme({
         MuiTableCell: {
             styleOverrides: {
                 root: {
-                    textAlign: "center"
+                    textAlign: "center",
+                    padding: "0px"
                 },
             }
         },
+    MuiTable:{
+        styleOverrides: {
+            root: {
+                backgroundColor: "#fff"
+            }
+        }
+    },
         MuiButton: {
             styleOverrides: {
                 root: {

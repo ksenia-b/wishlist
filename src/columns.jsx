@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {createColumnHelper} from "@tanstack/react-table";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -9,7 +8,6 @@ import ClearIcon from "@mui/icons-material/Clear";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import HeartButton from "./components/HeartButton/index";
-
 import product1 from "./assets/i/product1.png";
 
 const columnHelper = createColumnHelper()
