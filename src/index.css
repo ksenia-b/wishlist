@@ -3,22 +3,24 @@
     font-family: "Roboto, Helvetica, Arial, sans-serif"
 }
 
-.MuiTableRow-root{
+.MuiTableRow-root {
     /*display: block;*/
-    /*background-color: #fff;*/
+    background-color: #fff;
     /*border-bottom: 0;*/
     /*styles={{border: 0, margin: "50px", background: "red"}}*/
     /*border-bottom: 0;*/
-    border-collapse: separate;
+    /*border-collapse: separate;*/
     /*border-spacing: 0 10px;*/
-    border: transparent;
+    /*border: transparent;*/
 }
 
-.MuiTableRow-root:first-child{
-    margin-top: 0px;
+.MuiTableRow-root:first-child {
+    /*margin-top: 0px;*/
+    /*position: relative;*/
+    /*bottom: -20px;*/
 }
 
-.MuiTableCell-root{
+.MuiTableCell-root {
     padding: 0px;
 }
 

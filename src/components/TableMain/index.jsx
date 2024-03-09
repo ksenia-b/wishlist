@@ -5,7 +5,7 @@ import {
     useReactTable,
 } from '@tanstack/react-table'
 
-import Box from '@mui/material/Box';
+import {useTheme} from "@mui/material";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -15,23 +15,27 @@ import TableRow from '@mui/material/TableRow';
 
 
 function TableMain({columns, dataItems}) {
-    const [data, setData] = React.useState(() => [...dataItems])
-
+    const theme = useTheme();
     const table = useReactTable({
-        data,
+        data: dataItems,
         columns,
         getCoreRowModel: getCoreRowModel(),
     })
-
+    // [theme.breakpoints.down('sm')]: { flexDirection: 'column',  width: '100%' }
     return (
         <TableContainer>
-            <Table stickyHeader={true} style={{borderCollapse: "separate",
-            }} sx={{minWidth: 550}} >
+            <Table stickyHeader={true} style={{
+                borderCollapse: "separate",
+            }} sx={{minWidth: 550}}>
                 <TableHead style={{alignItems: "center"}}>
                     {table.getHeaderGroups().map(headerGroup => (
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map(header => (
-                                <TableCell key={header.id} style={{backgroundColor: "#F6F7F9", borderBottom: "none", paddingBottom: "0px"}}>
+                                <TableCell key={header.id} sx={{
+                                    backgroundColor: theme.palette.background.primary,
+                                    borderBottom: "none",
+                                    paddingBottom: "0px"
+                                }}>
                                     {header.isPlaceholder
                                         ? null
                                         : flexRender(
@@ -45,10 +49,11 @@ function TableMain({columns, dataItems}) {
                 </TableHead>
                 <TableBody>
                     {table.getRowModel().rows.map(row => (
-                        <TableRow key={row.id} >
+                        <TableRow key={row.id}>
                             {row.getVisibleCells().map(cell => (
-                                <TableCell key={cell.id}  align={cell.id === "name" ? 'right' : 'left'} isItemSelected={false} >
-                                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                <TableCell key={cell.id} align={cell.id === "name" ? 'right' : 'left'}
+                                           isItemSelected={false}>
+                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                 </TableCell>
                             ))}
                         </TableRow>

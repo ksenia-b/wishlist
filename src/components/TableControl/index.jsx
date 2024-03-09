@@ -1,19 +1,41 @@
 import * as React from "react";
 
+import {useTheme} from '@mui/material';
+import {styled} from '@mui/material';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete.js";
+import DeleteIcon from "@mui/icons-material/Delete";
 
+const StyledButton = styled(Button)(({theme}) => ({
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
+}));
 
-const TableControl = () => {
+const TableControl = ({onHandleSetFilter}) => {
+    const theme = useTheme();
+
     return (
-        <Box style={{display: "flex", justifyContent: "space-between", marginTop: "30px"}}>
-            <Box style={{display: "flex", gap: "20px"}}>
-                <Button variant={'outlined'} startIcon={<DeleteIcon/>}>All products</Button>
-                <Button variant={'outlined'} startIcon={<DeleteIcon/>}>Phones</Button>
-                <Button variant={'outlined'} startIcon={<DeleteIcon/>}>Accessories</Button>
+        <Box sx={{
+            display: "flex",
+            gap: "20px",
+            justifyContent: "space-between",
+            marginTop: "30px",
+            [theme.breakpoints.down('sm')]: {flexDirection: 'column', alignItems: 'center', width: '100%'}
+        }}>
+            <Box sx={{
+                display: "flex",
+                gap: "20px",
+                [theme.breakpoints.down('sm')]: {flexDirection: 'column', alignItems: 'center', width: '100%'}
+            }}>
+                <StyledButton variant={'outlined'} startIcon={<DeleteIcon/>} onClick={() => onHandleSetFilter("")}>All
+                    products</StyledButton>
+                <StyledButton variant={'outlined'} startIcon={<DeleteIcon/>}
+                              onClick={() => onHandleSetFilter("phones")}>Phones</StyledButton>
+                <StyledButton variant={'outlined'} startIcon={<DeleteIcon/>}
+                              onClick={() => onHandleSetFilter("accessories")}>Accessories</StyledButton>
             </Box>
-            <Button variant={'primary'}>New category</Button>
+            <StyledButton variant={'primary'}>New category</StyledButton>
         </Box>
 
     )
